@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.green.tag.boardtag.BoardTagMapper">
+<select id="selBt" resultType="BoardTagVo">
+   select iboard, title, ctnt, d_day dday, success
+    from board
+    where iboard=#{iboard}
+</select>
+    <insert id="insTb">
+        insert into board_tag
+        set iboard=#{iboard}
+        ,itag=#{itag}
+    </insert>
+    <select id="deBt">
+        select iboard, title, ctnt, dday, success
+        from board
+        where iboard=#{iboard}
+    </select>
+</mapper>
